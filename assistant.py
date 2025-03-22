@@ -10,14 +10,14 @@ import re
 import hashlib
 import subprocess
 import multiprocessing
-from gemini_api import get_gemini_response  # Your AI function
+from gemini_api import get_gemini_response 
 
 AUDIO_CACHE = {}
 
 def clean_text(text):
     """Removes unwanted characters like '*' and trims spaces."""
-    text = re.sub(r'[*_]', '', text)  # Removes * and _
-    text = re.sub(r'\s+', ' ', text).strip()  # Removes extra spaces
+    text = re.sub(r'[*_]', '', text) 
+    text = re.sub(r'\s+', ' ', text).strip()
     return text
 
 def generate_audio_filename(text):
@@ -52,9 +52,9 @@ def speak(text):
 def process_input(text):
     """Processes user input, fetches AI response, and speaks it."""
     text = clean_text(text)
-    response = get_gemini_response(text)  # Fast AI response
+    response = get_gemini_response(text)
     speak(response)
-    return response  # Return response for GUI display
+    return response 
  
 
 pygame.mixer.init()
@@ -79,7 +79,7 @@ def speak(text):
 
     threading.Thread(target=play_audio).start()
 
-from gemini_api import get_gemini_response  # Import your AI function
+from gemini_api import get_gemini_response
 
 def get_gemini_response(prompt):
     """Generate AI response using Gemini API."""
@@ -96,8 +96,8 @@ def process_input(text, label=None):
 
     print(f"AI Response: {response}")
     if label:
-        label.text = response  # Update GUI label
+        label.text = response 
 
-    speak(response)  # Speak the response aloud
+    speak(response) 
     return response
 
