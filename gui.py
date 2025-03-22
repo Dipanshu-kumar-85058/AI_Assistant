@@ -6,16 +6,11 @@ from kivy.uix.label import Label
 from kivy.uix.image import Image
 from kivy.core.window import Window
 from kivy.clock import Clock
-from kivymd.uix.spinner import MDSpinner  # Graphical loading spinner
+from kivymd.uix.spinner import MDSpinner
 import threading
 from voice import listen_for_command, speak
 from assistant import process_input
 from kivymd.app import MDApp
-
-class AIAssistantGUI(MDApp):
-    def build(self):
-        self.theme_cls.theme_style = "Dark"  # ✅ Set Dark Mode
-        self.theme_cls.primary_palette = "BlueGray"  # Optional for color theme
 
 
 # Set Dark Theme
@@ -23,8 +18,8 @@ Window.clearcolor = (0.1, 0.1, 0.1, 1)
 
 class AIAssistantGUI(MDApp):
     def build(self):
-        self.theme_cls.theme_style = "Dark"  # ✅ Set Dark Mode
-        self.theme_cls.primary_palette = "BlueGray"  # Optional for color theme
+        self.theme_cls.theme_style = "Dark"  
+        self.theme_cls.primary_palette = "BlueGray" 
 
         layout = BoxLayout(orientation='vertical', padding=20, spacing=10)
 
@@ -73,8 +68,8 @@ class AIAssistantGUI(MDApp):
         self.spinner = MDSpinner(
             size_hint=(None, None),
             size=(50, 50),
-            active=False,  # Hidden initially
-            color=(1, 1, 1, 1)  # White Spinner
+            active=true,
+            color=(1, 1, 1, 1) 
         )
 
         # Bind Buttons
@@ -84,12 +79,12 @@ class AIAssistantGUI(MDApp):
 
         # Add widgets to layout
         layout.add_widget(self.logo)
-        layout.add_widget(self.response_label)  # AI Output Display
+        layout.add_widget(self.response_label)
         layout.add_widget(self.text_input)
         layout.add_widget(self.ask_button)
         layout.add_widget(self.speak_button)
         layout.add_widget(self.listen_button)
-        layout.add_widget(self.spinner)  # Loader
+        layout.add_widget(self.spinner) 
 
         return layout
 
