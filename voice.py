@@ -26,7 +26,7 @@ def recognize_audio(filename="audio.wav"):
 
     try:
         text = recognizer.recognize_google(audio_data)
-        text = re.sub(r"[*]", "", text)  # Remove unwanted characters
+        text = re.sub(r"[*]", "", text) 
         print(f"Recognized: {text}")
         return text
     except sr.UnknownValueError:
@@ -42,7 +42,7 @@ def listen_for_command():
 def speak(text):
     """Converts text to speech and plays the audio."""
     try:
-        text = re.sub(r"[*]", "", text)  # Remove unwanted characters
+        text = re.sub(r"[*]", "", text)
         tts = gtts.gTTS(text, lang="en", slow=False)
         tts.save("response.mp3")
 
