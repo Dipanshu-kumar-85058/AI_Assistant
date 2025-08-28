@@ -24,6 +24,5 @@ A voice-controlled desktop assistant inspired by JARVIS, built with Python. This
 
 ### **How to Run Locally**
 1. Clone the repository: `git clone https://github.com/Dipanshu-kumar-85058/JARVIS.git`
-2. Install dependencies: `pip install -r requirements.txt` *(You should create a `requirements.txt` file for this)*
-3. Add your API keys to the script.
-4. Run the main script: `python main.py`
+2. Add your API keys to the script.
+3. Run the main script: `python main.py`
